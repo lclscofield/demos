@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>自定义checkbox， radio样式</title>
+<style type="text/css">
+#main {
+	width:300px;
+	margin:200px auto;
+}
+/*伪元素*/
+#top label {
+    display:inline-block;
+    cursor:pointer;
+    padding-left:25px;
+    margin-right:15px;
+}
+#top .radio {
+	height:30px;
+}
+#top label:before {
+    content:"";
+    display:inline-block;
+    width:16px;
+    height:16px;
+}
+#top .radio label:before {
+    border-radius:8px;
+	border:#aaa 1px solid;
+}
+#top .checkbox label:before {
+    border-radius:3px;
+	border:#aaa 1px solid;
+}
+#top input[type=radio],#top input[type=checkbox] {
+    display:none;
+}
+#top input[type=radio]:checked + label:before {
+    content:"\2022";
+    color:red;
+	border:red 1px solid;
+    font-size:28px;
+    text-align:center;
+	line-height:12px;
+}
+#top input[type=checkbox]:checked + label:before {
+    content:"\2713";
+    font-size:25px;
+	border:red 1px solid;
+    color:red;
+    text-align:center;
+	line-height:15px;
+}
+/*雪碧图*/
+#btm label{
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	display:inline-block;
+	background-image:url(cd.png);
+    margin-left:20px;
+}
+#btm .radio2 label {
+	background-position:27% 25%;
+}
+#btm .checkbox2 label {
+	background-position:27% 95%;
+}
+#btm input[type=radio]:checked + label {
+    background-position:71% 25%;
+}
+#btm input[type=checkbox]:checked + label {
+    background-position:71% 92%;
+}
+#btm input[type=radio],#btm input[type=checkbox] {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+<div id="main">
+<div id="top">
+<h1>伪元素实现</h1>
+<div class="radio">
+    <input id="l1" type="radio" name="1">
+    <label for="l1"></label>
+    <input id="r1" type="radio" name="1">
+    <label for="r1"></label>
+</div>
+
+<div class="checkbox">
+    <input id="l2" type="checkbox" name="2">
+    <label for="l2"></label>
+
+    <input id="r2" type="checkbox" name="2">
+    <label for="r2"></label>
+</div>
+</div>
+<div id="btm">
+<h1>雪碧图实现</h1>
+<div class="radio2">
+    <input id="l3" type="radio" name="3">
+    <label for="l3"></label>
+    <input id="r3" type="radio" name="3">
+    <label for="r3"></label>
+</div>
+
+<div class="checkbox2">
+    <input id="l4" type="checkbox" name="4">
+    <label for="l4"></label>
+    <input id="r4" type="checkbox" name="4">
+    <label for="r4"></label>
+</div>
+</div>
+</div>
+</body>
+</html>
